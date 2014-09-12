@@ -25,5 +25,8 @@ class RegisterCustomer
         if ($this->userRepository->findUserByEmail($email)) {
             throw new CustomerExists();
         }
+
+        $user = $this->userFactory->create($email, $password);
+        $this->userRepository->save($user);
     }
 }
