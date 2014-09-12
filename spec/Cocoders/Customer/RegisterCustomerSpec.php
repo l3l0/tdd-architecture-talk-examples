@@ -30,4 +30,17 @@ class RegisterCustomerSpec extends ObjectBehavior
             ->duringRegister('contact@cocoders.com', 'PlaiNPassWord')
         ;
     }
+
+    function it_create_and_save_user(
+        User $user,
+        UserRepository $userRepository,
+        UserFactory $userFactory
+    )
+    {
+        $userRepository->findUserByEmail('contact@cocoders.com')->willReturn(null);
+        $userFactory->create('contact@cocoders.com', 'PlaiNPassWord')->willReturn($user);
+        $userRepository->save($user)->shouldBeCalled();
+
+        $this->register('contact@cocoders.com', 'PlaiNPassWord');
+    }
 }
