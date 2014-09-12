@@ -11,4 +11,10 @@ interface UserRepository
      * @return User
      */
     public function findUserByEmail($email);
+
+    /**
+     * @param User $user
+     * @return null
+     */
+    public function save(User $user);
 }
