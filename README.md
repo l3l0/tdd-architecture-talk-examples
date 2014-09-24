@@ -1,4 +1,4 @@
-tdd-architecute-talks-examples
+tdd-architecture-talk-examples
 ==============================
 
-Examples from talks "Software Architecture and Thinking.  Raising TDD from the dead."
+Examples from talk "Software Architecture and Thinking.  Raising TDD from the dead."
